@@ -1,3 +1,7 @@
+# ManOS (Manolis Operating System)
+
+![screenshot](docs/screenshot.png)
+
 ### References:
 
 Experimenting with Operating System development using the following material:
