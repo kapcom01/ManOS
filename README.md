@@ -1,7 +1,8 @@
-### Reference:
+### References:
 
-https://wiki.osdev.org/GCC_Cross-Compiler
-https://wiki.osdev.org/Bare_Bones
+Experimenting with Operating System development using the following material:
+1. https://wiki.osdev.org/GCC_Cross-Compiler
+2. https://wiki.osdev.org/Bare_Bones
 
 ### Preparation:
 
