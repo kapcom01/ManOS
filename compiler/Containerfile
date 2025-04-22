@@ -23,6 +23,9 @@ RUN apt install --no-install-recommends -y \
                 grub-common \
                 xorriso
 
+RUN apt install -y ca-certificates
+RUN update-ca-certificates
+
 RUN mkdir /root/src
 RUN cd /root/src
 
