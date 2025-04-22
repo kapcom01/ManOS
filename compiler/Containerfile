@@ -4,8 +4,6 @@ ENV PREFIX=/root/opt/cross
 ENV TARGET=i686-elf
 ENV PATH="$PREFIX/bin:$PATH"
 
-RUN mkdir -p /root/opt/cross
-
 RUN apt update
 
 RUN apt install --no-install-recommends -y \
@@ -25,6 +23,8 @@ RUN apt install --no-install-recommends -y \
 
 RUN apt install -y ca-certificates
 RUN update-ca-certificates
+
+RUN mkdir -p $RPREFIX
 
 RUN mkdir /root/src
 RUN cd /root/src
@@ -58,10 +58,6 @@ ENV PREFIX=/root/opt/cross
 ENV TARGET=i686-elf
 ENV PATH="$PREFIX/bin:$PATH"
 
-RUN mkdir -p /root/opt/cross
-
-COPY --from=build /root/opt/cross/* /root/opt/cross/*
-
 RUN apt update
 
 RUN apt install --no-install-recommends -y \
@@ -78,5 +74,8 @@ RUN apt install --no-install-recommends -y \
                 wget \
                 grub-common \
                 xorriso
+
+RUN mkdir -p $RPREFIX
+COPY --from=build /root/opt/cross/* /root/opt/cross/*
 
 CMD ["i686-elf-gcc"]
